@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="match"
+            type="com.mjjang.lolfamousmatch.data.Match" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/MatchList.CardView"
+        android:onClick="@{clickListener}">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/card_side_margin">
+
+            <TextView
+                android:id="@+id/text_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{match.name}"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:gravity="start|center_vertical"
+                android:textSize="@dimen/text_size_big"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/text_sub_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_half"
+                android:text="@{match.sub_name}"
+                android:textAppearance="?attr/textAppearanceListItemSmall"
+                android:gravity="start|center_vertical"
+                android:textSize="@dimen/text_size_normal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_name"/>
+
+            <TextView
+                android:id="@+id/text_year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_half"
+                android:text="@{match.yearToString}"
+                android:textAppearance="?attr/textAppearanceListItemSmall"
+                android:gravity="start|center_vertical"
+                android:textSize="@dimen/text_size_normal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_sub_name"/>
+
+            <TextView
+                android:id="@+id/text_chat_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_half"
+                android:textAppearance="?attr/textAppearanceListItemSmall"
+                android:gravity="start|center_vertical"
+                android:textSize="@dimen/text_size_normal"
+                app:layout_constraintEnd_toStartOf="@+id/text_recom_count"
+                app:layout_constraintBottom_toBottomOf="@+id/text_year"
+                android:drawableLeft="@drawable/ic_chat_black_24dp"/>
+
+            <TextView
+                android:id="@+id/text_recom_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_half"
+                android:text="@{match.recommend.toString()}"
+                android:textAppearance="?attr/textAppearanceListItemSmall"
+                android:gravity="start|center_vertical"
+                android:textSize="@dimen/text_size_normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/text_year"
+                android:drawableLeft="@drawable/ic_favorite_border_black_24dp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</layout>

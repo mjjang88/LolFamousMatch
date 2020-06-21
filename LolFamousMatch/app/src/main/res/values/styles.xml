@@ -1,11 +1,32 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+    <style name="Base.Theme.LolFamousMatch" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#546e7a</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorPrimaryDark">#29434e</item>
+        <item name="colorOnSurface">#000000</item>
+        <item name="colorAccent">#6E608B</item>
+        <item name="colorSurface">#FFFFFF</item>
+        <item name="colorSecondary">#8B607D</item>
+        <item name="android:colorBackground">#F0F0F0</item>
+    </style>
+
+    <style name="Theme.LolFamousMatch" parent="Base.Theme.LolFamousMatch"/>
+
+    <style name="Theme.LolFamousMatch.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.LolFamousMatch.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar"/>
+
+    <style name="TextAppearance.LolFamousMatch.Toolbar.Text" parent="TextAppearance.MaterialComponents.Headline5" >
+        <item name="android:textColor">?attr/colorOnSurface</item>
+    </style>
+    
+    <style name="MatchList.CardView" parent="Widget.MaterialComponents.CardView">
+        <item name="cardCornerRadius">10dp</item>
+        <item name="cardElevation">10dp</item>
     </style>
 
 </resources>

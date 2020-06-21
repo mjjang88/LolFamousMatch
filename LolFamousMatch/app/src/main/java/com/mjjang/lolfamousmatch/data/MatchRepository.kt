@@ -9,6 +9,10 @@ class MatchRepository private constructor(
         return matchDao.getMatchList()
     }
 
+    fun getMatch(nID : Int) : LiveData<Match> {
+        return matchDao.getMatch(nID)
+    }
+
     companion object {
         @Volatile private var instance: MatchRepository? = null
 

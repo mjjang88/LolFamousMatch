@@ -7,12 +7,19 @@ import androidx.room.PrimaryKey
 data class Match(
     @PrimaryKey val id: Int,
     val name: String,
-    val year: Int,
-    val tag: String,
-    val link: String,
-    val recommend: Int
+    val sub_name : String?,
+    val year: Int?,
+    val tag: String?,
+    val link_full: String?,
+    val link_highlight: String?,
+    val recommend: Int?,
+    val thumbnail: String?
 ) {
     override fun toString(): String {
         return name
+    }
+
+    fun getYearToString(): String {
+        return "${year}년 경기"
     }
 }

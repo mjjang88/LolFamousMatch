@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/fragment_match_list">
+
+    <fragment
+        android:id="@+id/fragment_match_list"
+        android:name="com.mjjang.lolfamousmatch.MatchListFragment"
+        tools:layout="@layout/fragment_match_list">
+
+        <action
+            android:id="@+id/action_fragment_match_list_to_fragment_match_detail"
+            app:destination="@id/fragment_match_detail" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_match_detail"
+        android:name="com.mjjang.lolfamousmatch.MatchDetailFragment"
+        tools:layout="@layout/fragment_match_detail">
+
+        <argument
+            android:name="matchId"
+            app:argType="integer"/>
+
+    </fragment>
+
+</navigation>
