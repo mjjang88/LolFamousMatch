@@ -14,6 +14,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <kr.co.prnd.YouTubePlayerView
+            android:id="@+id/youtube_player_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:youtubeVideoId="@{viewModel.match.link_highlight}"/>
+
         <ImageView
             android:id="@+id/image_back"
             android:layout_width="wrap_content"
@@ -22,7 +30,7 @@
             android:layout_marginStart="@dimen/margin_normal"
             android:src="@drawable/ic_arrow_back_black_24dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@+id/youtube_player_view"/>
 
         <TextView
             android:id="@+id/text_name"
@@ -34,7 +42,7 @@
             android:textSize="@dimen/text_size_title"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/image_back"
-            app:layout_constraintBaseline_toBaselineOf="@id/image_back"/>
+            app:layout_constraintTop_toTopOf="@id/image_back"/>
 
         <TextView
             android:id="@+id/text_sub_name"
