@@ -79,7 +79,6 @@ class MatchListFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
-
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
