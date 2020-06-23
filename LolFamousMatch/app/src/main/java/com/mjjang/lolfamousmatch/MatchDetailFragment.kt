@@ -32,10 +32,6 @@ class MatchDetailFragment : Fragment() {
         }
         context ?: return binding.root
 
-        binding.imageBack.setOnClickListener {
-            view?.findNavController()?.navigateUp()
-        }
-
         activity?.onBackPressedDispatcher?.addCallback {
             view?.findNavController()?.navigateUp()
         }

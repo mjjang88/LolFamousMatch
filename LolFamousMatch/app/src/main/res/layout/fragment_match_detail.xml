@@ -22,27 +22,19 @@
             app:layout_constraintTop_toTopOf="parent"
             app:youtubeVideoId="@{viewModel.match.link_highlight}"/>
 
-        <ImageView
-            android:id="@+id/image_back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_normal"
-            android:layout_marginStart="@dimen/margin_normal"
-            android:src="@drawable/ic_arrow_back_black_24dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/youtube_player_view"/>
-
         <TextView
             android:id="@+id/text_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_half"
+            android:layout_marginStart="@dimen/margin_normal"
             android:text="@{viewModel.match.name}"
             android:textAppearance="?attr/textAppearanceHeadline5"
             android:gravity="start|center_vertical"
             android:textSize="@dimen/text_size_title"
             android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/image_back"
-            app:layout_constraintTop_toTopOf="@id/image_back"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/youtube_player_view"/>
 
         <TextView
             android:id="@+id/text_sub_name"
