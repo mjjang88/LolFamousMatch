@@ -34,6 +34,8 @@ buildscript {
         workVersion = '2.3.3'
         retrofitVersion = '2.6.2'
         converterGsonVersion = '2.6.0'
+        firebaseVersion = '17.2.2'
+        firestoreVersion = '21.2.1'
     }
 
     repositories {

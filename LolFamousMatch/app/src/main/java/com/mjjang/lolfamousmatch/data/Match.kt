@@ -12,8 +12,7 @@ data class Match(
     val tag: String?,
     val link_full: String?,
     val link_highlight: String?,
-    val recommend: Int?,
-    val thumbnail: String?
+    val recommend: Int?
 ) {
     override fun toString(): String {
         return name

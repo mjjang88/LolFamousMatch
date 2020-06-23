@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "440790247305",
+    "firebase_url": "https://lolfamousmatch.firebaseio.com",
+    "project_id": "lolfamousmatch",
+    "storage_bucket": "lolfamousmatch.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:440790247305:android:5ea1493e006e9eb15ba358",
+        "android_client_info": {
+          "package_name": "com.mjjang.lolfamousmatch"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "440790247305-15folu123so0c1euvvebjilr65bgejkm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mjjang.lolfamousmatch",
+            "certificate_hash": "1beae4b11caf5f9a8caf04e37c4c28effc1b05cf"
+          }
+        },
+        {
+          "client_id": "440790247305-b7qhh7bd5rlv3jt6u94j27jtc7dafb29.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHQ1mxm50w4ziuCmiZ35-e61an2s5O2Dc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "440790247305-b7qhh7bd5rlv3jt6u94j27jtc7dafb29.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

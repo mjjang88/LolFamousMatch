@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.mjjang.lolfamousmatch.adapter.MatchListAdapter
 import com.mjjang.lolfamousmatch.data.Match
 import com.mjjang.lolfamousmatch.databinding.FragmentMatchListBinding
+import com.mjjang.lolfamousmatch.firestore.FireStoreProc
 import com.mjjang.lolfamousmatch.utilities.InjectorUtils
 import com.mjjang.lolfamousmatch.viewmodels.MatchListViewModel
 
@@ -78,6 +79,12 @@ class MatchListFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
+
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        FireStoreProc.getMatchAll()
     }
 
     class RecyclerViewDecoration(

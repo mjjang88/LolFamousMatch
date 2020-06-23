@@ -4,4 +4,7 @@
     <string name="back_press_message">\"뒤로가기\"를 한번 더 누르면 종료됩니다.</string>
 
     <string name="empty_display_game">보여드릴 경기가 없습니다.\n인터넷 접속 상태를 확인해 주세요.</string>
+
+    <string name="db_response_success">데이터 로드 성공</string>
+    <string name="db_response_fail">데이터 로드 실패</string>
 </resources>
