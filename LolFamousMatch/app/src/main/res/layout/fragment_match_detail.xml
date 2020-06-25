@@ -75,6 +75,18 @@
             app:layout_constraintBottom_toBottomOf="@+id/text_year"
             android:drawableLeft="@drawable/ic_favorite_border_black_24dp"/>
 
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/layout_chip_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_half"
+            android:layout_marginStart="@dimen/margin_normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_year">
+
+
+        </com.google.android.material.chip.ChipGroup>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

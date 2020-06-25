@@ -23,7 +23,7 @@ object FireStoreProc {
                         document.data.getValue("name") as String,
                         document.data.getValue("sub_name") as String,
                         (document.data.getValue("year") as Long).toInt(),
-                        (document.data.getValue("tag") as List<*>).toString(),
+                        getArrayToString((document.data.getValue("tag") as List<String>)),
                         document.data.getValue("link_full") as String,
                         document.data.getValue("link_highlight") as String,
                         (document.data.getValue("recommend") as Long).toInt()
@@ -32,11 +32,24 @@ object FireStoreProc {
                 }
                 GlobalScope.launch {
                     val database = AppDatabase.getInstance(App.applicationContext())
+                    database.matchDao().deleteAll()
                     database.matchDao().insertAll(dataList)
                 }
                 Toast.makeText(App.applicationContext(), R.string.db_response_success, Toast.LENGTH_SHORT).show()
             }
             .addOnFailureListener {
             }
+    }
+
+    private fun getArrayToString(list: List<String>) : String {
+        val iterator = list.listIterator()
+        var tagString : String = String()
+        while(iterator.hasNext()) {
+            val string = iterator.next()
+            if (!string.isNullOrBlank()) {
+                tagString += "$string,"
+            }
+        }
+        return tagString.dropLastWhile { c -> c == ',' }
     }
 }

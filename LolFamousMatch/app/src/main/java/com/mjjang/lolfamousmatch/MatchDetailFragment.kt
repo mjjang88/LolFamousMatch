@@ -7,8 +7,10 @@ import android.view.ViewGroup
 import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
+import com.google.android.material.chip.Chip
 import com.mjjang.lolfamousmatch.databinding.FragmentMatchDetailBinding
 import com.mjjang.lolfamousmatch.utilities.InjectorUtils
 import com.mjjang.lolfamousmatch.viewmodels.MatchDetailViewModel
@@ -36,6 +38,19 @@ class MatchDetailFragment : Fragment() {
             view?.findNavController()?.navigateUp()
         }
 
+        matchDetailViewModel.match.observe(viewLifecycleOwner, Observer {
+            val tagArray = it.tag?.split(",")
+            if (tagArray != null) {
+                for (tag in tagArray) {
+                    val chip = Chip(activity)
+                    chip.text = "#$tag"
+                    binding.layoutChipGroup.addView(chip)
+                }
+            }
+        })
+
         return binding.root
     }
+
+
 }

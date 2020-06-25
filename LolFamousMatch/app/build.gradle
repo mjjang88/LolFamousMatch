@@ -68,6 +68,9 @@ dependencies {
     implementation "com.google.firebase:firebase-analytics:$rootProject.firebaseVersion"
     implementation "com.google.firebase:firebase-firestore:$rootProject.firestoreVersion"
 
+    // private api
+    implementation 'kr.co.prnd:youtube-player-view:1.3.0'
+
     // Testing dependencies
     androidTestImplementation "androidx.arch.core:core-testing:$rootProject.coreTestingVersion"
     androidTestImplementation "androidx.test.espresso:espresso-contrib:$rootProject.espressoVersion"
@@ -76,9 +79,5 @@ dependencies {
     androidTestImplementation "androidx.test.ext:junit:$rootProject.testExtJunit"
     androidTestImplementation "androidx.test.uiautomator:uiautomator:$rootProject.uiAutomatorVersion"
     androidTestImplementation "androidx.work:work-testing:$rootProject.workVersion"
-    androidTestImplementation "com.google.truth:truth:$rootProject.truthVersion"
     testImplementation "junit:junit:$rootProject.junitVersion"
-
-    // private api
-    implementation 'kr.co.prnd:youtube-player-view:1.3.0'
 }
