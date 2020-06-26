@@ -20,71 +20,107 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/card_side_margin">
+            android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/text_name"
-                android:layout_width="wrap_content"
+            <ImageView
+                android:id="@+id/image_thumbnail"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@{match.name}"
-                android:textAppearance="?attr/textAppearanceListItem"
-                android:singleLine="true"
-                android:ellipsize="end"
-                android:gravity="start|center_vertical"
-                android:textSize="@dimen/text_size_big"
-                android:textStyle="bold"
+                app:youtubeThumbnailFromId="@{match.link_highlight}"
+                android:adjustViewBounds="true"
+                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
-
-            <TextView
-                android:id="@+id/text_sub_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_half"
-                android:text="@{match.sub_name}"
-                android:textAppearance="?attr/textAppearanceListItemSmall"
-                android:gravity="start|center_vertical"
-                android:textSize="@dimen/text_size_normal"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/text_name"/>
-
-            <TextView
-                android:id="@+id/text_year"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_half"
-                android:text="@{match.yearToString}"
-                android:textAppearance="?attr/textAppearanceListItemSmall"
-                android:gravity="start|center_vertical"
-                android:textSize="@dimen/text_size_normal"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/text_sub_name"/>
-
-            <TextView
-                android:id="@+id/text_chat_count"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_half"
-                android:textAppearance="?attr/textAppearanceListItemSmall"
-                android:gravity="start|center_vertical"
-                android:textSize="@dimen/text_size_normal"
-                app:layout_constraintEnd_toStartOf="@+id/text_recom_count"
-                app:layout_constraintBottom_toBottomOf="@+id/text_year"
-                android:drawableLeft="@drawable/ic_chat_black_24dp"/>
-
-            <TextView
-                android:id="@+id/text_recom_count"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_half"
-                android:text="@{match.recommend.toString()}"
-                android:textAppearance="?attr/textAppearanceListItemSmall"
-                android:gravity="start|center_vertical"
-                android:textSize="@dimen/text_size_normal"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="@+id/text_year"
-                android:drawableLeft="@drawable/ic_favorite_border_black_24dp"/>
+                app:layout_constraintBottom_toTopOf="@+id/layout_content"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/image_thumbnail"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:padding="@dimen/margin_half">
+
+                <TextView
+                    android:id="@+id/text_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{match.name}"
+                    android:textAppearance="?attr/textAppearanceListItem"
+                    android:gravity="start|center_vertical"
+                    android:textSize="@dimen/text_size_big"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <TextView
+                    android:id="@+id/text_sub_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_quarter"
+                    android:text="@{match.sub_name}"
+                    android:textAppearance="?attr/textAppearanceListItemSmall"
+                    android:gravity="start|center_vertical"
+                    android:textSize="@dimen/text_size_normal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/text_name"/>
+
+                <TextView
+                    android:id="@+id/text_year"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_quarter"
+                    android:text="@{match.yearToString}"
+                    android:textAppearance="?attr/textAppearanceListItemSmall"
+                    android:gravity="start|center_vertical"
+                    android:textSize="@dimen/text_size_normal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/text_sub_name"/>
+
+                <TextView
+                    android:id="@+id/text_chat_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_quarter"
+                    android:textAppearance="?attr/textAppearanceListItemSmall"
+                    android:gravity="start|center_vertical"
+                    android:textSize="@dimen/text_size_normal"
+                    app:layout_constraintEnd_toStartOf="@+id/text_recom_count"
+                    app:layout_constraintBottom_toBottomOf="@+id/text_year"
+                    android:drawableLeft="@drawable/ic_chat_black_24dp"/>
+
+                <TextView
+                    android:id="@+id/text_recom_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_quarter"
+                    android:text="@{match.recommend.toString()}"
+                    android:textAppearance="?attr/textAppearanceListItemSmall"
+                    android:gravity="start|center_vertical"
+                    android:textSize="@dimen/text_size_normal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@+id/text_year"
+                    android:drawableLeft="@drawable/ic_favorite_border_black_24dp"/>
+
+                <HorizontalScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/text_year"
+                    android:scrollbars="none">
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/layout_tag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:singleLine="true"
+                        app:addTag="@{match.tag}"/>
+
+                </HorizontalScrollView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

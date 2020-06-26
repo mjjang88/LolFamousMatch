@@ -1,5 +1,6 @@
 package com.mjjang.lolfamousmatch
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +13,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
 import com.google.android.material.chip.Chip
 import com.mjjang.lolfamousmatch.databinding.FragmentMatchDetailBinding
+import com.mjjang.lolfamousmatch.utilities.DynamicStyle
 import com.mjjang.lolfamousmatch.utilities.InjectorUtils
 import com.mjjang.lolfamousmatch.viewmodels.MatchDetailViewModel
 
@@ -44,6 +46,7 @@ class MatchDetailFragment : Fragment() {
                 for (tag in tagArray) {
                     val chip = Chip(activity)
                     chip.text = "#$tag"
+                    DynamicStyle.setChipStyle(chip)
                     binding.layoutChipGroup.addView(chip)
                 }
             }

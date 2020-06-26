@@ -8,7 +8,7 @@
         <item name="colorAccent">#6E608B</item>
         <item name="colorSurface">#FFFFFF</item>
         <item name="colorSecondary">#8B607D</item>
-        <item name="android:colorBackground">#F0F0F0</item>
+        <item name="android:colorBackground">#FFFFFF</item>
     </style>
 
     <style name="Theme.LolFamousMatch" parent="Base.Theme.LolFamousMatch"/>
@@ -26,7 +26,6 @@
     
     <style name="MatchList.CardView" parent="Widget.MaterialComponents.CardView">
         <item name="cardCornerRadius">10dp</item>
-        <item name="cardElevation">10dp</item>
     </style>
 
 </resources>
