@@ -10,6 +10,7 @@ import com.mjjang.lolfamousmatch.utilities.DATABASE_NAME
 @Database(entities = [Match::class, MatchType::class], version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun matchDao(): MatchDao
+    abstract fun matchTypeDao(): MatchTypeDao
 
     companion object {
         @Volatile private var instance: AppDatabase? = null

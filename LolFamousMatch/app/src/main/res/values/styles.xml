@@ -1,9 +1,9 @@
 <resources>
 
     <style name="Base.Theme.LolFamousMatch" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="colorPrimary">#546e7a</item>
-        <item name="colorOnPrimary">#FFFFFF</item>
-        <item name="colorPrimaryDark">#29434e</item>
+        <item name="colorPrimary">#FFFFFF</item>
+        <item name="colorOnPrimary">#111111</item>
+        <item name="colorPrimaryDark">#E0E0E0</item>
         <item name="colorOnSurface">#000000</item>
         <item name="colorAccent">#6E608B</item>
         <item name="colorSurface">#FFFFFF</item>

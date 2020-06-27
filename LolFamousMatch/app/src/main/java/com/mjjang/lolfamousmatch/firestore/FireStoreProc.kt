@@ -5,6 +5,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.mjjang.lolfamousmatch.R
 import com.mjjang.lolfamousmatch.data.AppDatabase
 import com.mjjang.lolfamousmatch.data.Match
+import com.mjjang.lolfamousmatch.data.MatchType
 import com.mjjang.lolfamousmatch.manager.App
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -38,6 +39,28 @@ object FireStoreProc {
                 Toast.makeText(App.applicationContext(), R.string.db_response_success, Toast.LENGTH_SHORT).show()
             }
             .addOnFailureListener {
+            }
+    }
+
+    fun getFilterAll() {
+        db.collection("filter")
+            .get()
+            .addOnSuccessListener { result ->
+                val dataList : ArrayList<MatchType> = ArrayList()
+                for (document in result) {
+                    val data : MatchType = MatchType(
+                        document.data.getValue("name") as String,
+                        document.data.getValue("category") as String,
+                        (document.data.getValue("select_count") as Long).toInt()
+                    )
+                    dataList.add(data)
+                }
+                GlobalScope.launch {
+                    val database = AppDatabase.getInstance(App.applicationContext())
+                    database.matchTypeDao().deleteAll()
+                    database.matchTypeDao().insertAll(dataList)
+                }
+                Toast.makeText(App.applicationContext(), R.string.db_response_success, Toast.LENGTH_SHORT).show()
             }
     }
 

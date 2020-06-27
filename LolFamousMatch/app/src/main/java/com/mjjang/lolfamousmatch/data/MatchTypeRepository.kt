@@ -5,8 +5,8 @@ import androidx.lifecycle.LiveData
 class MatchTypeRepository private constructor(
     private val matchTypeDao: MatchTypeDao
 ){
-    fun getMatchTypeList(category: String) : LiveData<List<MatchType>> {
-        return matchTypeDao.getMatchTypeList(category)
+    fun getMatchTypeList() : LiveData<List<MatchType>> {
+        return matchTypeDao.getMatchTypeList()
     }
 
     companion object {

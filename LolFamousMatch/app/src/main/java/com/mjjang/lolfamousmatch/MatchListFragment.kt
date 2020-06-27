@@ -10,6 +10,7 @@ import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.observe
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.mjjang.lolfamousmatch.adapter.MatchListAdapter
 import com.mjjang.lolfamousmatch.data.Match
@@ -64,6 +65,10 @@ class MatchListFragment : Fragment() {
             }
         })
 
+        binding.setFilterClickListener {
+            navigateToFilter(it)
+        }
+
         activity?.onBackPressedDispatcher?.addCallback {
             val systemTiem = System.currentTimeMillis()
             if (systemTiem > backKeyPressTime + BACK_KEY_PRESS_TIME) {
@@ -84,6 +89,7 @@ class MatchListFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         FireStoreProc.getMatchAll()
+        FireStoreProc.getFilterAll()
     }
 
     class RecyclerViewDecoration(
@@ -105,5 +111,11 @@ class MatchListFragment : Fragment() {
         viewModel.matchs.observe(viewLifecycleOwner) { matchs ->
             adapter.submitList(matchs)
         }
+    }
+
+    private fun navigateToFilter(view: View) {
+        val direction = MatchListFragmentDirections
+            .actionFragmentMatchListToFragmentMatchFilter()
+        view.findNavController().navigate(direction)
     }
 }
