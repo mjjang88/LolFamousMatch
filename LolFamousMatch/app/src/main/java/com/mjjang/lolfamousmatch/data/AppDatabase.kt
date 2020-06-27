@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.mjjang.lolfamousmatch.utilities.DATABASE_NAME
 
-@Database(entities = [Match::class], version = 1, exportSchema = false)
+@Database(entities = [Match::class, MatchType::class], version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun matchDao(): MatchDao
 
