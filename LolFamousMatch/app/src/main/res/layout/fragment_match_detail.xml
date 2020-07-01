@@ -29,12 +29,9 @@
             android:layout_marginTop="@dimen/margin_half"
             android:layout_marginStart="@dimen/margin_normal"
             android:text="@{viewModel.match.name}"
-            android:textAppearance="?attr/textAppearanceHeadline5"
-            android:gravity="start|center_vertical"
-            android:textSize="@dimen/text_size_title"
-            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/youtube_player_view"/>
+            app:layout_constraintTop_toBottomOf="@+id/youtube_player_view"
+            style="@style/TextTitle"/>
 
         <TextView
             android:id="@+id/text_sub_name"
@@ -43,11 +40,9 @@
             android:layout_marginTop="@dimen/margin_half"
             android:layout_marginStart="@dimen/margin_normal"
             android:text="@{viewModel.match.sub_name}"
-            android:textAppearance="?attr/textAppearanceBody1"
-            android:gravity="start|center_vertical"
-            android:textSize="@dimen/text_size_big"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_name"/>
+            app:layout_constraintTop_toBottomOf="@+id/text_name"
+            style="@style/TextBig"/>
 
         <TextView
             android:id="@+id/text_year"
@@ -56,11 +51,9 @@
             android:layout_marginTop="@dimen/margin_half"
             android:layout_marginStart="@dimen/margin_normal"
             android:text="@{viewModel.match.yearToString}"
-            android:textAppearance="?attr/textAppearanceBody1"
-            android:gravity="start|center_vertical"
-            android:textSize="@dimen/text_size_big"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_sub_name"/>
+            app:layout_constraintTop_toBottomOf="@+id/text_sub_name"
+            style="@style/TextBig"/>
 
         <TextView
             android:id="@+id/text_recom_count"
@@ -68,12 +61,10 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/margin_normal"
             android:text="@{viewModel.match.recommend.toString()}"
-            android:textAppearance="?attr/textAppearanceListItemSmall"
-            android:gravity="start|center_vertical"
-            android:textSize="@dimen/text_size_normal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="@+id/text_year"
-            android:drawableLeft="@drawable/ic_favorite_border_black_24dp"/>
+            android:drawableLeft="@drawable/ic_favorite_border_black_24dp"
+            style="@style/TextSmall"/>
 
         <com.google.android.material.chip.ChipGroup
             android:id="@+id/layout_chip_group"

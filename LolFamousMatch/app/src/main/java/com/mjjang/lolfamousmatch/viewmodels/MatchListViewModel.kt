@@ -10,6 +10,5 @@ class MatchListViewModel internal constructor(
     matchRepository: MatchRepository,
     private val savedStateHandle: SavedStateHandle
 ) : ViewModel() {
-
     val matchs: LiveData<List<Match>> = matchRepository.getMatchList()
 }

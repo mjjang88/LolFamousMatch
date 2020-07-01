@@ -37,12 +37,10 @@
             tools:context="com.mjjang.lolnotification.MainActivity"
             android:background="#F0F0F0"
             android:text="@string/empty_display_game"
-            android:textStyle="bold"
-            android:textSize="@dimen/tutorial_font_size"
-            android:gravity="center"
-            android:textAppearance="?attr/textAppearanceListItem"
             android:lineSpacingExtra="20dp"
-            android:visibility="gone"/>
+            android:visibility="gone"
+            style="@style/TextTitle"
+            android:gravity="center"/>
 
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/app_bar_layout"

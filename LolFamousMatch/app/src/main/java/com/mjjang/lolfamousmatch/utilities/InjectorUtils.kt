@@ -17,9 +17,15 @@ object InjectorUtils {
         )
     }
 
+    private fun getMatchTypeRepository(context: Context): MatchTypeRepository {
+        return MatchTypeRepository.getInstance(
+            AppDatabase.getInstance(context.applicationContext).matchTypeDao()
+        )
+    }
+
     fun provideMatchListViewModelFactory(fragment: Fragment): MatchListViewModelFactory {
-        val repository = getMatchRepository(fragment.requireContext())
-        return MatchListViewModelFactory(repository, fragment)
+        val matchRepository = getMatchRepository(fragment.requireContext())
+        return MatchListViewModelFactory(matchRepository, fragment)
     }
 
     fun provideMatchDetailViewModelFactory(fragment: Fragment, nID: Int): MatchDetailViewModelFactory {
@@ -27,14 +33,8 @@ object InjectorUtils {
         return MatchDetailViewModelFactory(repository, nID)
     }
 
-    private fun getMatchTypeRepository(context: Context): MatchTypeRepository {
-        return MatchTypeRepository.getInstance(
-            AppDatabase.getInstance(context.applicationContext).matchTypeDao()
-        )
-    }
-
     fun provideMatchFilterViewModelFactory(fragment: Fragment): MatchFilterViewModelFactory {
-        val repository = getMatchTypeRepository(fragment.requireContext())
-        return MatchFilterViewModelFactory(repository)
+        val matchRepository = getMatchTypeRepository(fragment.requireContext())
+        return MatchFilterViewModelFactory(matchRepository)
     }
 }

@@ -7,6 +7,6 @@ import androidx.room.PrimaryKey
 data class MatchType(
     @PrimaryKey val name: String,
     val category: String,
-    val select_count: Int?
+    val select_count: Int
 ) {
 }

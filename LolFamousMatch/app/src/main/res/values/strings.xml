@@ -7,4 +7,11 @@
 
     <string name="db_response_success">데이터 로드 성공</string>
     <string name="db_response_fail">데이터 로드 실패</string>
+
+    <string name="filter_selected">선택된 필터</string>
+    <string name="team">팀</string>
+    <string name="match_type">경기유형</string>
+    <string name="lane">라인</string>
+    <string name="player">선수</string>
+    <string name="champion">챔피언</string>
 </resources>

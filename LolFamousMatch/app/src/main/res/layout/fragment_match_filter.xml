@@ -9,64 +9,108 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.google.android.material.chip.ChipGroup
-            android:id="@+id/layout_selected"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/margin_normal"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/layout_team"/>
+            android:layout_height="match_parent">
 
-        <com.google.android.material.chip.ChipGroup
-            android:id="@+id/layout_team"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/margin_normal"
-            app:layout_constraintTop_toBottomOf="@+id/layout_selected"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/layout_match_type"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/margin_normal">
 
-        <com.google.android.material.chip.ChipGroup
-            android:id="@+id/layout_match_type"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/margin_normal"
-            app:layout_constraintTop_toBottomOf="@+id/layout_team"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/layout_lane"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/filter_selected"
+                    style="@style/TextBig"/>
 
-        <com.google.android.material.chip.ChipGroup
-            android:id="@+id/layout_lane"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/margin_normal"
-            app:layout_constraintTop_toBottomOf="@+id/layout_match_type"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/layout_player"/>
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/layout_selected"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
 
-        <com.google.android.material.chip.ChipGroup
-            android:id="@+id/layout_player"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/margin_normal"
-            app:layout_constraintTop_toBottomOf="@+id/layout_lane"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/layout_champion"/>
+                <View style="@style/Divider"
+                    android:layout_marginTop="@dimen/margin_half"/>
 
-        <com.google.android.material.chip.ChipGroup
-            android:id="@+id/layout_champion"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/margin_normal"
-            app:layout_constraintTop_toBottomOf="@+id/layout_player"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_normal"
+                    android:text="@string/team"
+                    style="@style/TextBig" />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/layout_team"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <View style="@style/Divider"
+                    android:layout_marginTop="@dimen/margin_half"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_normal"
+                    android:text="@string/match_type"
+                    style="@style/TextBig" />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/layout_match_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <View style="@style/Divider"
+                    android:layout_marginTop="@dimen/margin_half"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_normal"
+                    android:text="@string/lane"
+                    style="@style/TextBig" />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/layout_lane"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <View style="@style/Divider"
+                    android:layout_marginTop="@dimen/margin_half"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_normal"
+                    android:text="@string/player"
+                    style="@style/TextBig" />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/layout_player"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <View style="@style/Divider"
+                    android:layout_marginTop="@dimen/margin_half"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_normal"
+                    android:text="@string/champion"
+                    style="@style/TextBig" />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/layout_champion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <View style="@style/Divider"
+                    android:layout_marginTop="@dimen/margin_half"/>
+
+            </LinearLayout>
+
+        </ScrollView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
