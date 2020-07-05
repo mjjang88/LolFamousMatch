@@ -1,5 +1,6 @@
 package com.mjjang.lolfamousmatch.utilities
 
+import android.content.res.ColorStateList
 import com.google.android.material.chip.Chip
 import com.mjjang.lolfamousmatch.R
 import com.mjjang.lolfamousmatch.manager.App
@@ -16,6 +17,7 @@ object DynamicStyle {
         view.isCheckable = true
         view.isChipIconVisible = false
         view.isCloseIconVisible = false
-        view.checkedIcon = App.applicationContext().getDrawable(R.drawable.ic_check_black_24dp)
+        view.checkedIcon = null
+        view.chipBackgroundColor = view.resources.getColorStateList(R.color.filter_chip_backgound_color_selector, null)
     }
 }

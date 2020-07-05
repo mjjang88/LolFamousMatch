@@ -14,4 +14,6 @@
     <string name="lane">라인</string>
     <string name="player">선수</string>
     <string name="champion">챔피언</string>
+
+    <string name="match_all">전체경기</string>
 </resources>

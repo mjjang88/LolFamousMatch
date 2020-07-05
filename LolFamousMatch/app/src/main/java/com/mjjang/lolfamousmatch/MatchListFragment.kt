@@ -91,7 +91,7 @@ class MatchListFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        FireStoreProc.getMatchByFilter(AppPreference.getTagSelectedAll())
+        FireStoreProc.getMatchList(AppPreference.getTagSelectedAll())
         FireStoreProc.getFilterAll()
     }
 
@@ -134,6 +134,10 @@ class MatchListFragment : Fragment() {
                 }
             }
             it.text = strTitle
+
+            if (it.text.isNullOrEmpty()) {
+                it.text = resources.getString(R.string.match_all)
+            }
         }
     }
 }

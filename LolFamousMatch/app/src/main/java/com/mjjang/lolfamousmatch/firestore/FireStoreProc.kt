@@ -13,7 +13,15 @@ import kotlinx.coroutines.launch
 object FireStoreProc {
     val db = FirebaseFirestore.getInstance()
 
-    fun getMatchAll() {
+    fun getMatchList(tagList: List<String>) {
+        if (tagList.isNotEmpty()) {
+            getMatchByFilter(tagList)
+        } else {
+            getMatchAll()
+        }
+    }
+
+    private fun getMatchAll() {
         db.collection("Match")
             .get()
             .addOnSuccessListener { result ->
@@ -41,7 +49,7 @@ object FireStoreProc {
             }
     }
 
-    fun getMatchByFilter(tagList: List<String>) {
+    private fun getMatchByFilter(tagList: List<String>) {
         db.collection("Match")
             .whereArrayContainsAny("tag", tagList)
             .get()

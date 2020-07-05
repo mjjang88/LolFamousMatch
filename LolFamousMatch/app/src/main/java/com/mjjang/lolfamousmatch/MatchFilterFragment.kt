@@ -31,6 +31,8 @@ class MatchFilterFragment : Fragment() {
         InjectorUtils.provideMatchFilterViewModelFactory(this)
     }
 
+    var mbFilterChanged = false
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -42,7 +44,9 @@ class MatchFilterFragment : Fragment() {
         context ?: return binding.root
 
         activity?.onBackPressedDispatcher?.addCallback {
-            FireStoreProc.getMatchByFilter(AppPreference.getTagSelectedAll())
+            if (mbFilterChanged) {
+                FireStoreProc.getMatchList(AppPreference.getTagSelectedAll())
+            }
             view?.findNavController()?.navigateUp()
         }
 
@@ -67,11 +71,23 @@ class MatchFilterFragment : Fragment() {
         val chip = Chip(activity)
         chip.text = "#${name}"
         DynamicStyle.setChipStyle(chip)
-        if (!isTitle) {
+        if (isTitle) {
+            chip.isCloseIconVisible = true
+            chip.closeIcon = resources.getDrawable(R.drawable.ic_baseline_close_24, null)
+            chip.setOnCloseIconClickListener {
+                AppPreference.putTagSelected(name, AppPreference.NONE)
+                (it.parent as ViewGroup).removeView(it)
+                setFilterChipChecked(name)
+                mbFilterChanged = true
+            }
+        } else {
             DynamicStyle.setChipFilterStyle(chip)
+            chip.isChecked = checkSelectedChip(name)
+            if (chip.isChecked) {
+                addChip(layout_selected, name, true)
+            }
             chip.setOnCheckedChangeListener(mCheckChangeListener)
         }
-        chip.isChecked = checkSelectedChip(name)
         chipGroup.addView(chip)
     }
 
@@ -99,5 +115,41 @@ class MatchFilterFragment : Fragment() {
             delChip(layout_selected, name)
             AppPreference.putTagSelected(name, AppPreference.NONE)
         }
+
+        mbFilterChanged = true
+    }
+
+    private fun setFilterChipChecked(filter : String) {
+        if (setFilterChipChecked(layout_team, filter)) {
+            return
+        }
+
+        if (setFilterChipChecked(layout_match_type, filter)) {
+            return
+        }
+
+        if (setFilterChipChecked(layout_lane, filter)) {
+            return
+        }
+
+        if (setFilterChipChecked(layout_player, filter)) {
+            return
+        }
+
+        if (setFilterChipChecked(layout_champion, filter)) {
+            return
+        }
+    }
+
+    private fun setFilterChipChecked(chipGroup: ChipGroup, filter: String) : Boolean {
+        for (nIndex in 0 until chipGroup.size) {
+            (chipGroup.getChildAt(nIndex) as Chip).let {
+                if (it.text.toString().removePrefix("#").compareTo(filter) == 0) {
+                    it.isChecked = false
+                    return true
+                }
+            }
+        }
+        return false
     }
 }
