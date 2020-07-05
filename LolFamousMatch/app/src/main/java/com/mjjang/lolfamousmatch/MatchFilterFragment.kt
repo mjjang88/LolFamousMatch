@@ -15,6 +15,7 @@ import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
 import com.mjjang.lolfamousmatch.data.AppDatabase
 import com.mjjang.lolfamousmatch.databinding.FragmentMatchFilterBinding
+import com.mjjang.lolfamousmatch.firestore.FireStoreProc
 import com.mjjang.lolfamousmatch.manager.App
 import com.mjjang.lolfamousmatch.manager.AppPreference
 import com.mjjang.lolfamousmatch.utilities.DynamicStyle
@@ -41,6 +42,7 @@ class MatchFilterFragment : Fragment() {
         context ?: return binding.root
 
         activity?.onBackPressedDispatcher?.addCallback {
+            FireStoreProc.getMatchByFilter(AppPreference.getTagSelectedAll())
             view?.findNavController()?.navigateUp()
         }
 

@@ -61,11 +61,13 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <LinearLayout
+                    <TextView
+                        android:id="@+id/text_title"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_weight="1"/>
+                        android:layout_weight="1"
+                        android:textColor="@color/black"
+                        style="@style/TextTitle"/>
 
                     <ImageView
                         android:layout_width="wrap_content"

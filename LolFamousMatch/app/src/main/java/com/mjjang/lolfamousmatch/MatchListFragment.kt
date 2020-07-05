@@ -16,8 +16,10 @@ import com.mjjang.lolfamousmatch.adapter.MatchListAdapter
 import com.mjjang.lolfamousmatch.data.Match
 import com.mjjang.lolfamousmatch.databinding.FragmentMatchListBinding
 import com.mjjang.lolfamousmatch.firestore.FireStoreProc
+import com.mjjang.lolfamousmatch.manager.AppPreference
 import com.mjjang.lolfamousmatch.utilities.InjectorUtils
 import com.mjjang.lolfamousmatch.viewmodels.MatchListViewModel
+import kotlinx.android.synthetic.main.fragment_match_list.*
 
 class MatchListFragment : Fragment() {
 
@@ -84,11 +86,12 @@ class MatchListFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
+        setTitle()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        FireStoreProc.getMatchAll()
+        FireStoreProc.getMatchByFilter(AppPreference.getTagSelectedAll())
         FireStoreProc.getFilterAll()
     }
 
@@ -117,5 +120,20 @@ class MatchListFragment : Fragment() {
         val direction = MatchListFragmentDirections
             .actionFragmentMatchListToFragmentMatchFilter()
         view.findNavController().navigate(direction)
+    }
+
+    private fun setTitle() {
+        text_title?.let {
+            var strTitle = String()
+            val iterator = AppPreference.getTagSelectedAll().listIterator()
+            for (tag in iterator) {
+                if (strTitle.isNullOrEmpty()) {
+                    strTitle += "#$tag"
+                } else {
+                    strTitle += " #$tag"
+                }
+            }
+            it.text = strTitle
+        }
     }
 }

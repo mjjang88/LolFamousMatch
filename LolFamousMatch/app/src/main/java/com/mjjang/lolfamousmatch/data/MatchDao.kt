@@ -16,4 +16,10 @@ interface MatchDao {
 
     @Query("DELETE FROM matchs")
     suspend fun deleteAll()
+
+    @Transaction
+    suspend fun deleteAndInsert(matchs: List<Match>) {
+        deleteAll()
+        insertAll(matchs)
+    }
 }

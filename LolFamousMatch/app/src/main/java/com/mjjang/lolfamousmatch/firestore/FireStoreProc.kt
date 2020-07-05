@@ -33,8 +33,36 @@ object FireStoreProc {
                 }
                 GlobalScope.launch {
                     val database = AppDatabase.getInstance(App.applicationContext())
-                    database.matchDao().deleteAll()
-                    database.matchDao().insertAll(dataList)
+                    database.matchDao().deleteAndInsert(dataList)
+                }
+                Toast.makeText(App.applicationContext(), R.string.db_response_success, Toast.LENGTH_SHORT).show()
+            }
+            .addOnFailureListener {
+            }
+    }
+
+    fun getMatchByFilter(tagList: List<String>) {
+        db.collection("Match")
+            .whereArrayContainsAny("tag", tagList)
+            .get()
+            .addOnSuccessListener { result ->
+                val dataList : ArrayList<Match> = ArrayList()
+                for (document in result) {
+                    val data : Match = Match(
+                        (document.data.getValue("id") as Long).toInt(),
+                        document.data.getValue("name") as String,
+                        document.data.getValue("sub_name") as String,
+                        (document.data.getValue("year") as Long).toInt(),
+                        getArrayToString((document.data.getValue("tag") as List<String>)),
+                        document.data.getValue("link_full") as String,
+                        document.data.getValue("link_highlight") as String,
+                        (document.data.getValue("recommend") as Long).toInt()
+                    )
+                    dataList.add(data)
+                }
+                GlobalScope.launch {
+                    val database = AppDatabase.getInstance(App.applicationContext())
+                    database.matchDao().deleteAndInsert(dataList)
                 }
                 Toast.makeText(App.applicationContext(), R.string.db_response_success, Toast.LENGTH_SHORT).show()
             }
@@ -57,8 +85,7 @@ object FireStoreProc {
                 }
                 GlobalScope.launch {
                     val database = AppDatabase.getInstance(App.applicationContext())
-                    database.matchTypeDao().deleteAll()
-                    database.matchTypeDao().insertAll(dataList)
+                    database.matchTypeDao().deleteAndInsert(dataList)
                 }
                 Toast.makeText(App.applicationContext(), R.string.db_response_success, Toast.LENGTH_SHORT).show()
             }

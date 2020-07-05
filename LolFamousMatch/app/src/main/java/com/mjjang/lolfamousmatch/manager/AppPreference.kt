@@ -50,4 +50,11 @@ object AppPreference {
         }
         return 0
     }
+
+    fun getTagSelectedAll() : List<String> {
+        return preference.all.filter {
+            it.key.startsWith("tag_")
+                    && (it.value as Int) == 1
+        }.map { it.key.removePrefix("tag_") }
+    }
 }

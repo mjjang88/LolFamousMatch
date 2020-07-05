@@ -35,7 +35,7 @@ buildscript {
         retrofitVersion = '2.6.2'
         converterGsonVersion = '2.6.0'
         firebaseVersion = '17.2.2'
-        firestoreVersion = '21.2.1'
+        firestoreVersion = '21.3.0'
     }
 
     repositories {
@@ -44,7 +44,7 @@ buildscript {
 
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.6.3'
+        classpath 'com.android.tools.build:gradle:4.0.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion"
         classpath 'com.google.gms:google-services:4.3.3'
