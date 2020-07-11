@@ -51,8 +51,16 @@ class MatchDetailFragment : Fragment() {
             }
         })
 
+        binding.buttonSignIn.setOnClickListener {
+            navigateToSignIn(it)
+        }
+
         return binding.root
     }
 
-
+    private fun navigateToSignIn(view: View) {
+        val direction = MatchDetailFragmentDirections
+            .actionFragmentMatchDetailToFragmentSignIn()
+        view.findNavController().navigate(direction)
+    }
 }

@@ -25,6 +25,10 @@
         android:name="com.mjjang.lolfamousmatch.MatchDetailFragment"
         tools:layout="@layout/fragment_match_detail">
 
+        <action
+            android:id="@+id/action_fragment_match_detail_to_fragment_sign_in"
+            app:destination="@+id/fragment_sign_in" />
+
         <argument
             android:name="matchId"
             app:argType="integer"/>
@@ -36,6 +40,12 @@
         android:name="com.mjjang.lolfamousmatch.MatchFilterFragment"
         tools:layout="@layout/fragment_match_filter">
 
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_sign_in"
+        android:name="com.mjjang.lolfamousmatch.SignInFragment"
+        tools:layout="@layout/fragment_sign_in">
 
     </fragment>
 
