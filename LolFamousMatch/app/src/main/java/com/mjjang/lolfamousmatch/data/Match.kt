@@ -5,7 +5,7 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "matchs")
 data class Match(
-    @PrimaryKey val id: Int,
+    @PrimaryKey val id: String,
     val name: String,
     val sub_name : String?,
     val year: Int?,

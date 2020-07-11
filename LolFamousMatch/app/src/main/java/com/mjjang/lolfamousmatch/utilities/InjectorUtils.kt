@@ -28,9 +28,9 @@ object InjectorUtils {
         return MatchListViewModelFactory(matchRepository, fragment)
     }
 
-    fun provideMatchDetailViewModelFactory(fragment: Fragment, nID: Int): MatchDetailViewModelFactory {
+    fun provideMatchDetailViewModelFactory(fragment: Fragment, strID: String): MatchDetailViewModelFactory {
         val repository = getMatchRepository(fragment.requireContext())
-        return MatchDetailViewModelFactory(repository, nID)
+        return MatchDetailViewModelFactory(repository, strID)
     }
 
     fun provideMatchFilterViewModelFactory(fragment: Fragment): MatchFilterViewModelFactory {

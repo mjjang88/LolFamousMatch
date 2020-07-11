@@ -8,8 +8,8 @@ import com.mjjang.lolfamousmatch.data.MatchRepository
 
 class MatchDetailViewModel internal constructor(
     matchRepository: MatchRepository,
-    nID: Int
+    strID: String
 ) : ViewModel() {
 
-    val match: LiveData<Match> = matchRepository.getMatch(nID)
+    val match: LiveData<Match> = matchRepository.getMatch(strID)
 }

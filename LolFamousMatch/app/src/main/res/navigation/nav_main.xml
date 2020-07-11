@@ -31,7 +31,7 @@
 
         <argument
             android:name="matchId"
-            app:argType="integer"/>
+            app:argType="string"/>
 
     </fragment>
 

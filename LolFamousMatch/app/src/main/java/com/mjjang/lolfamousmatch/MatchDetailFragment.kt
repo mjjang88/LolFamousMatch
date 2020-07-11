@@ -12,9 +12,12 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
 import com.google.android.material.chip.Chip
 import com.mjjang.lolfamousmatch.databinding.FragmentMatchDetailBinding
+import com.mjjang.lolfamousmatch.firestore.FireStoreProc
+import com.mjjang.lolfamousmatch.utilities.AuthManager
 import com.mjjang.lolfamousmatch.utilities.DynamicStyle
 import com.mjjang.lolfamousmatch.utilities.InjectorUtils
 import com.mjjang.lolfamousmatch.viewmodels.MatchDetailViewModel
+import kotlinx.android.synthetic.main.fragment_match_detail.*
 
 class MatchDetailFragment : Fragment() {
 
@@ -53,6 +56,22 @@ class MatchDetailFragment : Fragment() {
 
         binding.buttonSignIn.setOnClickListener {
             navigateToSignIn(it)
+        }
+
+        binding.btnComment.setOnClickListener {
+
+            if (matchDetailViewModel.match.value == null ||
+                    AuthManager.auth.currentUser == null ||
+                    AuthManager.auth.currentUser!!.displayName == null ||
+                    edit_comment.editText == null) {
+                return@setOnClickListener
+            }
+
+            FireStoreProc.insertComment(
+                matchDetailViewModel.match.value!!.id,
+                AuthManager.auth.currentUser!!.displayName!!,
+                edit_comment.editText!!.text.toString()
+            )
         }
 
         return binding.root

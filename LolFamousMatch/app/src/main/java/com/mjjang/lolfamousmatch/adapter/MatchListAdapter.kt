@@ -39,7 +39,7 @@ class MatchListAdapter() : ListAdapter<Match, RecyclerView.ViewHolder>(MatchDiff
             }
         }
 
-        private fun navigateToDetail(matchId: Int, view: View) {
+        private fun navigateToDetail(matchId: String, view: View) {
             val direction = MatchListFragmentDirections
                 .actionFragmentMatchListToFragmentMatchDetail(matchId)
             view.findNavController().navigate(direction)
