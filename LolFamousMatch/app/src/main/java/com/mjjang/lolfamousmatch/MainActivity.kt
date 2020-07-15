@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil.setContentView
+import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -21,6 +22,9 @@ class MainActivity : AppCompatActivity() {
 
         // firebase 인증
         AuthManager.init(this)
+
+        // Admob 초기화
+        MobileAds.initialize(this)
     }
 
     override fun onConfigurationChanged(newConfig: Configuration) {

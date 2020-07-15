@@ -39,6 +39,7 @@ buildscript {
         koinVersion = '2.0.1'
         firebaseAuthVersion = '19.3.1'
         playServicesAuthVersion = '18.0.0'
+        playServicesAdsVersion = '19.2.0'
     }
 
     repositories {

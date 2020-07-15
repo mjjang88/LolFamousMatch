@@ -10,6 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
+import com.google.android.gms.ads.AdRequest
 import com.google.android.material.chip.Chip
 import com.mjjang.lolfamousmatch.databinding.FragmentMatchDetailBinding
 import com.mjjang.lolfamousmatch.firestore.FireStoreProc
@@ -54,25 +55,7 @@ class MatchDetailFragment : Fragment() {
             }
         })
 
-        binding.buttonSignIn.setOnClickListener {
-            navigateToSignIn(it)
-        }
-
-        binding.btnComment.setOnClickListener {
-
-            if (matchDetailViewModel.match.value == null ||
-                    AuthManager.auth.currentUser == null ||
-                    AuthManager.auth.currentUser!!.displayName == null ||
-                    edit_comment.editText == null) {
-                return@setOnClickListener
-            }
-
-            FireStoreProc.insertComment(
-                matchDetailViewModel.match.value!!.id,
-                AuthManager.auth.currentUser!!.displayName!!,
-                edit_comment.editText!!.text.toString()
-            )
-        }
+        binding.adView.loadAd(AdRequest.Builder().build())
 
         return binding.root
     }
