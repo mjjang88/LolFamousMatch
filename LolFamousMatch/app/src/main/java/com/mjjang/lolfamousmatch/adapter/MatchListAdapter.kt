@@ -7,7 +7,6 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.chip.Chip
 import com.mjjang.lolfamousmatch.MatchListFragmentDirections
 import com.mjjang.lolfamousmatch.data.Match
 import com.mjjang.lolfamousmatch.databinding.ListItemMatchBinding

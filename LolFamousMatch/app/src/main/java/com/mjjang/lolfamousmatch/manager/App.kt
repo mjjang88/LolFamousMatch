@@ -5,8 +5,6 @@ import android.content.Context
 import androidx.appcompat.app.AppCompatDelegate
 
 class App : Application() {
-    lateinit var context: Context
-
     init{
         instance = this
 

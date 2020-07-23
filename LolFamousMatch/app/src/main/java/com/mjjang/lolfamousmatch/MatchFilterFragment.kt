@@ -14,17 +14,13 @@ import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
-import com.mjjang.lolfamousmatch.data.AppDatabase
 import com.mjjang.lolfamousmatch.databinding.FragmentMatchFilterBinding
 import com.mjjang.lolfamousmatch.firestore.FireStoreProc
-import com.mjjang.lolfamousmatch.manager.App
 import com.mjjang.lolfamousmatch.manager.AppPreference
 import com.mjjang.lolfamousmatch.utilities.DynamicStyle
 import com.mjjang.lolfamousmatch.utilities.InjectorUtils
 import com.mjjang.lolfamousmatch.viewmodels.MatchFilterViewModel
 import kotlinx.android.synthetic.main.fragment_match_filter.*
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 
 class MatchFilterFragment : Fragment() {
 

@@ -12,15 +12,10 @@
             type="com.mjjang.lolfamousmatch.data.Match" />
     </data>
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/MatchList.CardView"
-        android:onClick="@{clickListener}">
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:onClick="@{clickListener}">
 
             <ImageView
                 android:id="@+id/image_thumbnail"
@@ -41,7 +36,9 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                android:padding="@dimen/margin_half">
+                android:paddingTop="@dimen/margin_half"
+                android:paddingLeft="@dimen/margin_normal"
+                android:paddingRight="@dimen/margin_normal">
 
                 <TextView
                     android:id="@+id/text_name"
@@ -72,27 +69,6 @@
                     app:layout_constraintTop_toBottomOf="@+id/text_sub_name"
                     style="@style/TextListNormal"/>
 
-                <TextView
-                    android:id="@+id/text_chat_count"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_quarter"
-                    app:layout_constraintEnd_toStartOf="@+id/text_recom_count"
-                    app:layout_constraintBottom_toBottomOf="@+id/text_year"
-                    android:drawableLeft="@drawable/ic_chat_black_24dp"
-                    style="@style/TextListNormal"/>
-
-                <TextView
-                    android:id="@+id/text_recom_count"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_quarter"
-                    android:text="@{match.recommend.toString()}"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintBottom_toBottomOf="@+id/text_year"
-                    android:drawableLeft="@drawable/ic_favorite_border_black_24dp"
-                    style="@style/TextListNormal"/>
-
                 <HorizontalScrollView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -112,6 +88,5 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
 
 </layout>

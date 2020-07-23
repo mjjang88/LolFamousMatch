@@ -13,7 +13,6 @@ import androidx.lifecycle.observe
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.mjjang.lolfamousmatch.adapter.MatchListAdapter
-import com.mjjang.lolfamousmatch.data.Match
 import com.mjjang.lolfamousmatch.databinding.FragmentMatchListBinding
 import com.mjjang.lolfamousmatch.firestore.FireStoreProc
 import com.mjjang.lolfamousmatch.manager.AppPreference

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">롤 명경기</string>
+    <string name="app_name">LoLPlay</string>
 
     <string name="back_press_message">\"뒤로가기\"를 한번 더 누르면 종료됩니다.</string>
 
