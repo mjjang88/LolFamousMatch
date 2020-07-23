@@ -44,7 +44,7 @@ object FireStoreProc {
                     val database = AppDatabase.getInstance(App.applicationContext())
                     database.matchDao().deleteAndInsert(dataList)
                 }
-                Toast.makeText(App.applicationContext(), R.string.db_response_success, Toast.LENGTH_SHORT).show()
+                //Toast.makeText(App.applicationContext(), R.string.db_response_success, Toast.LENGTH_SHORT).show()
             }
             .addOnFailureListener {
             }
@@ -73,7 +73,7 @@ object FireStoreProc {
                     val database = AppDatabase.getInstance(App.applicationContext())
                     database.matchDao().deleteAndInsert(dataList)
                 }
-                Toast.makeText(App.applicationContext(), R.string.db_response_success, Toast.LENGTH_SHORT).show()
+                //Toast.makeText(App.applicationContext(), R.string.db_response_success, Toast.LENGTH_SHORT).show()
             }
             .addOnFailureListener {
             }
@@ -96,7 +96,7 @@ object FireStoreProc {
                     val database = AppDatabase.getInstance(App.applicationContext())
                     database.matchTypeDao().deleteAndInsert(dataList)
                 }
-                Toast.makeText(App.applicationContext(), R.string.db_response_success, Toast.LENGTH_SHORT).show()
+                //Toast.makeText(App.applicationContext(), R.string.db_response_success, Toast.LENGTH_SHORT).show()
             }
     }
 

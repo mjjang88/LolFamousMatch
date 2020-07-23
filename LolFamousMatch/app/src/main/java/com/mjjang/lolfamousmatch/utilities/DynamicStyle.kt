@@ -19,5 +19,6 @@ object DynamicStyle {
         view.isCloseIconVisible = false
         view.checkedIcon = null
         view.chipBackgroundColor = view.resources.getColorStateList(R.color.filter_chip_backgound_color_selector, null)
+        view.setTextColor(view.resources.getColorStateList(R.color.filter_chip_text_color_selector, null))
     }
 }
