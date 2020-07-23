@@ -13,12 +13,9 @@ import androidx.navigation.fragment.navArgs
 import com.google.android.gms.ads.AdRequest
 import com.google.android.material.chip.Chip
 import com.mjjang.lolfamousmatch.databinding.FragmentMatchDetailBinding
-import com.mjjang.lolfamousmatch.firestore.FireStoreProc
-import com.mjjang.lolfamousmatch.utilities.AuthManager
 import com.mjjang.lolfamousmatch.utilities.DynamicStyle
 import com.mjjang.lolfamousmatch.utilities.InjectorUtils
 import com.mjjang.lolfamousmatch.viewmodels.MatchDetailViewModel
-import kotlinx.android.synthetic.main.fragment_match_detail.*
 
 class MatchDetailFragment : Fragment() {
 
