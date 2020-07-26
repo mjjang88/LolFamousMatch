@@ -2,10 +2,12 @@ package com.mjjang.lolfamousmatch
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.CompoundButton
+import android.widget.Toast
 import androidx.activity.addCallback
 import androidx.core.view.size
 import androidx.fragment.app.Fragment
@@ -29,6 +31,9 @@ class MatchFilterFragment : Fragment() {
     }
 
     var mbFilterChanged = false
+
+    val MAX_TITLE_FILTER_COUNT = 10;
+    var mTitleFilterCount = 0
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -76,7 +81,9 @@ class MatchFilterFragment : Fragment() {
                 (it.parent as ViewGroup).removeView(it)
                 setFilterChipChecked(name)
                 mbFilterChanged = true
+                mTitleFilterCount--
             }
+            mTitleFilterCount++
         } else {
             DynamicStyle.setChipFilterStyle(chip)
             chip.isChecked = checkSelectedChip(name)
@@ -97,6 +104,7 @@ class MatchFilterFragment : Fragment() {
             val chip = chipGroup.getChildAt(nIndex) as Chip
             if (chip.text.removePrefix("#") == name) {
                 chipGroup.removeViewAt(nIndex)
+                mTitleFilterCount--
                 return
             }
         }
@@ -110,6 +118,11 @@ class MatchFilterFragment : Fragment() {
         val name = buttonView.text.toString().removePrefix("#")
         if (isChecked) {
             // add chip
+            if (mTitleFilterCount == MAX_TITLE_FILTER_COUNT) {
+                Toast.makeText(buttonView.context, R.string.max_tag_count, Toast.LENGTH_SHORT).show()
+                buttonView.isChecked = false
+                return@OnCheckedChangeListener
+            }
             addChip(layout_selected, name, true)
             AppPreference.putTagSelected(name, AppPreference.SELECT)
         } else {

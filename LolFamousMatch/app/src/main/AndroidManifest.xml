@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.mjjang.lolfamousmatch">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:name=".manager.App"
         android:allowBackup="true"
@@ -22,5 +24,7 @@
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-7079933845574364~3569162111"/>
     </application>
+
+
 
 </manifest>
