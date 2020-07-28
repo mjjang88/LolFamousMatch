@@ -22,10 +22,17 @@ object VersionManager {
             }
 
             val deviceVerison = context.packageManager.getPackageInfo(context.packageName, 0).versionName
-            if (marketVersion > deviceVerison) {
+            if (removeLastVersionCode(marketVersion) > removeLastVersionCode(deviceVerison)) {
                 showUpdateDialog(context)
             }
+
+            marketVersion.lastIndexOf(".")
         }
+    }
+
+    fun removeLastVersionCode(version : String) : String {
+        val nLastIndex = version.lastIndexOf(".")
+        return version.substring(0, nLastIndex)
     }
 
     private fun getMarketVersion(context: Context) : String {
