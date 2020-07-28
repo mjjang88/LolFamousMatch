@@ -86,7 +86,7 @@
             android:layout_centerHorizontal="true"
             app:layout_constraintBottom_toBottomOf="parent"
             ads:adSize="SMART_BANNER"
-            ads:adUnitId="ca-app-pub-7079933845574364/3569162111"/>
+            ads:adUnitId="ca-app-pub-7079933845574364/7863630345"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
