@@ -42,6 +42,7 @@ buildscript {
         playServicesAdsVersion = '19.2.0'
         firebaseAnalyticsVersion = '17.4.3'
         firebaseCrashlyticsVersion = '17.1.0'
+        jsoupVersion = '1.13.1'
     }
 
     repositories {

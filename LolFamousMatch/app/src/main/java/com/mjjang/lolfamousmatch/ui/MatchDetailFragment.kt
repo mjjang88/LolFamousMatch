@@ -1,4 +1,4 @@
-package com.mjjang.lolfamousmatch
+package com.mjjang.lolfamousmatch.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -19,7 +19,6 @@ import com.mjjang.lolfamousmatch.utilities.DynamicStyle
 import com.mjjang.lolfamousmatch.utilities.InjectorUtils
 import com.mjjang.lolfamousmatch.viewmodels.MatchDetailViewModel
 import kotlinx.android.synthetic.main.fragment_match_detail.*
-import kr.co.prnd.YouTubePlayerView
 import kr.co.prnd.YouTubePlayerView.OnInitializedListener
 
 class MatchDetailFragment : Fragment(), OnInitializedListener {
@@ -77,8 +76,8 @@ class MatchDetailFragment : Fragment(), OnInitializedListener {
     }
 
     private fun navigateToSignIn(view: View) {
-        val direction = MatchDetailFragmentDirections
-            .actionFragmentMatchDetailToFragmentSignIn()
+        val direction =
+            MatchDetailFragmentDirections.actionFragmentMatchDetailToFragmentSignIn()
         view.findNavController().navigate(direction)
     }
 

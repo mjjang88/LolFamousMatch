@@ -1,4 +1,4 @@
-package com.mjjang.lolfamousmatch
+package com.mjjang.lolfamousmatch.ui
 
 import android.content.Intent
 import android.os.Bundle

@@ -1,8 +1,7 @@
-package com.mjjang.lolfamousmatch
+package com.mjjang.lolfamousmatch.ui
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,6 +15,7 @@ import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
+import com.mjjang.lolfamousmatch.R
 import com.mjjang.lolfamousmatch.databinding.FragmentMatchFilterBinding
 import com.mjjang.lolfamousmatch.firestore.FireStoreProc
 import com.mjjang.lolfamousmatch.manager.AppPreference
@@ -119,7 +119,8 @@ class MatchFilterFragment : Fragment() {
         if (isChecked) {
             // add chip
             if (mTitleFilterCount == MAX_TITLE_FILTER_COUNT) {
-                Toast.makeText(buttonView.context, R.string.max_tag_count, Toast.LENGTH_SHORT).show()
+                Toast.makeText(buttonView.context,
+                    R.string.max_tag_count, Toast.LENGTH_SHORT).show()
                 buttonView.isChecked = false
                 return@OnCheckedChangeListener
             }

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/fragment_match_list"
-        android:name="com.mjjang.lolfamousmatch.MatchListFragment"
+        android:name="com.mjjang.lolfamousmatch.ui.MatchListFragment"
         tools:layout="@layout/fragment_match_list">
 
         <action
@@ -22,7 +22,7 @@
 
     <fragment
         android:id="@+id/fragment_match_detail"
-        android:name="com.mjjang.lolfamousmatch.MatchDetailFragment"
+        android:name="com.mjjang.lolfamousmatch.ui.MatchDetailFragment"
         tools:layout="@layout/fragment_match_detail">
 
         <action
@@ -37,14 +37,14 @@
 
     <fragment
         android:id="@+id/fragment_match_filter"
-        android:name="com.mjjang.lolfamousmatch.MatchFilterFragment"
+        android:name="com.mjjang.lolfamousmatch.ui.MatchFilterFragment"
         tools:layout="@layout/fragment_match_filter">
 
     </fragment>
 
     <fragment
         android:id="@+id/fragment_sign_in"
-        android:name="com.mjjang.lolfamousmatch.SignInFragment"
+        android:name="com.mjjang.lolfamousmatch.ui.SignInFragment"
         tools:layout="@layout/fragment_sign_in">
 
     </fragment>

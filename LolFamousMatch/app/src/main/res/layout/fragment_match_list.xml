@@ -54,7 +54,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:layout_scrollFlags="scroll|enterAlways"
-                style="@style/Widget.MaterialComponents.Toolbar.Primary">
+                style="@style/Widget.MaterialComponents.Toolbar.Surface">
 
                 <LinearLayout
                     android:layout_width="match_parent"

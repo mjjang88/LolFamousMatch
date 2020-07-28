@@ -1,4 +1,4 @@
-package com.mjjang.lolfamousmatch
+package com.mjjang.lolfamousmatch.ui
 
 import android.graphics.Rect
 import android.os.Bundle
@@ -12,6 +12,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.observe
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.mjjang.lolfamousmatch.R
 import com.mjjang.lolfamousmatch.adapter.MatchListAdapter
 import com.mjjang.lolfamousmatch.databinding.FragmentMatchListBinding
 import com.mjjang.lolfamousmatch.firestore.FireStoreProc
@@ -43,7 +44,12 @@ class MatchListFragment : Fragment() {
         binding.listMatch.adapter = adapter
         subscribeUi(adapter)
 
-        binding.listMatch.addItemDecoration(RecyclerViewDecoration(resources.getDimension(R.dimen.margin_normal).toInt()))
+        binding.listMatch.addItemDecoration(
+            RecyclerViewDecoration(
+            resources.getDimension(R.dimen.margin_normal)
+                .toInt()
+        )
+        )
 
         (binding.listMatch.adapter as MatchListAdapter).registerAdapterDataObserver(object : RecyclerView.AdapterDataObserver() {
             override fun onChanged() {
@@ -74,7 +80,8 @@ class MatchListFragment : Fragment() {
             val systemTiem = System.currentTimeMillis()
             if (systemTiem > backKeyPressTime + BACK_KEY_PRESS_TIME) {
                 backKeyPressTime = systemTiem
-                Toast.makeText(activity, R.string.back_press_message, Toast.LENGTH_SHORT).show()
+                Toast.makeText(activity,
+                    R.string.back_press_message, Toast.LENGTH_SHORT).show()
             } else {
                 activity?.finish()
             }
@@ -116,8 +123,8 @@ class MatchListFragment : Fragment() {
     }
 
     private fun navigateToFilter(view: View) {
-        val direction = MatchListFragmentDirections
-            .actionFragmentMatchListToFragmentMatchFilter()
+        val direction =
+            MatchListFragmentDirections.actionFragmentMatchListToFragmentMatchFilter()
         view.findNavController().navigate(direction)
     }
 
