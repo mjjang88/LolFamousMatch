@@ -7,9 +7,9 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.mjjang.lolfamousmatch.MatchListFragmentDirections
 import com.mjjang.lolfamousmatch.data.Match
 import com.mjjang.lolfamousmatch.databinding.ListItemMatchBinding
+import com.mjjang.lolfamousmatch.ui.MatchListFragmentDirections
 
 class MatchListAdapter() : ListAdapter<Match, RecyclerView.ViewHolder>(MatchDiffCallback()) {
 
