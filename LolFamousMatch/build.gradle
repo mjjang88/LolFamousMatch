@@ -43,6 +43,7 @@ buildscript {
         firebaseAnalyticsVersion = '17.4.3'
         firebaseCrashlyticsVersion = '17.1.0'
         jsoupVersion = '1.13.1'
+        lottieVersion = '3.4.0'
     }
 
     repositories {

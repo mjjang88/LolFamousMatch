@@ -97,8 +97,6 @@ class MatchListFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        FireStoreProc.getMatchList(AppPreference.getTagSelectedAll())
-        FireStoreProc.getFilterAll()
     }
 
     class RecyclerViewDecoration(

@@ -7,6 +7,7 @@ import androidx.databinding.DataBindingUtil.setContentView
 import com.google.android.gms.ads.MobileAds
 import com.mjjang.lolfamousmatch.R
 import com.mjjang.lolfamousmatch.databinding.ActivityMainBinding
+import com.mjjang.lolfamousmatch.manager.DialogManager
 import com.mjjang.lolfamousmatch.utilities.VersionManager
 
 class MainActivity : AppCompatActivity() {
@@ -17,14 +18,7 @@ class MainActivity : AppCompatActivity() {
             R.layout.activity_main
         )
 
-        // firebase 인증
-        //AuthManager.init(this)
-
-        // Admob 초기화
-        MobileAds.initialize(this)
-
-        // 버전 체크
-        VersionManager.doVersionCheck(this)
+        DialogManager.showLoadingDialog(this)
     }
 
     override fun onConfigurationChanged(newConfig: Configuration) {
